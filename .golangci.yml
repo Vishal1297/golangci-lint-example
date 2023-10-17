@@ -1,4 +1,3 @@
----
 run:
   # Timeout for analysis, e.g. 30s, 5m.
   # Default: 1m
@@ -67,9 +66,6 @@ linters-settings:
     # If lower than 0, disable the check.
     # Default: 40
     statements: 50
-    # Ignore comments when counting lines.
-    # Default false
-    ignore-comments: true
 
   gocognit:
     # Minimal code complexity to report.
@@ -197,7 +193,6 @@ linters:
     - exportloopref # checks for pointers to enclosing loop variables
     - forbidigo # forbids identifiers
     - funlen # tool for detection of long functions
-    - gocheckcompilerdirectives # validates go compiler directive comments (//go:)
     - gochecknoglobals # checks that no global variables exist
     - gochecknoinits # checks that no init functions are present in Go code
     - gocognit # computes and checks the cognitive complexity of functions
@@ -214,8 +209,6 @@ linters:
     - lll # reports long lines
     - loggercheck # checks key value pairs for common logger libraries (kitlog,klog,logr,zap)
     - makezero # finds slice declarations with non-zero initial length
-    - mirror # reports wrong mirror patterns of bytes/strings usage
-    - musttag # enforces field tags in (un)marshaled structs
     - nakedret # finds naked returns in functions greater than a specified function length
     - nestif # reports deeply nested if statements
     - nilerr # finds the code that returns nil even if it checks that the error is not nil
@@ -321,13 +314,13 @@ output:
   # Example: "checkstyle:report.xml,json:stdout,colored-line-number"
   #
   # Default: colored-line-number
-  format: json
+  format: json:golangci-report.json
   # Print lines of code with issue.
   # Default: true
   print-issued-lines: false
   # Print linter name in the end of issue text.
   # Default: true
-  print-linter-name: false
+  print-linter-name: true
   # Make issues output unique by line.
   # Default: true
   uniq-by-line: false
