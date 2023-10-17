@@ -317,13 +317,13 @@ output:
   # Example: "checkstyle:report.xml,json:stdout,colored-line-number"
   #
   # Default: colored-line-number
-  format: json
+  format: json:golangci-report.json
   # Print lines of code with issue.
   # Default: true
   print-issued-lines: false
   # Print linter name in the end of issue text.
   # Default: true
-  print-linter-name: false
+  print-linter-name: true
   # Make issues output unique by line.
   # Default: true
   uniq-by-line: false
