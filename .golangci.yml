@@ -3,6 +3,9 @@ run:
   # Default: 1m
   timeout: 3m
   allow-parallel-runners: true
+  # When enabled linter will skip directories: vendor$, third_party$, testdata$, examples$, Godeps$, builtin$
+  # Skipping `examples` sounds scary to me but skipping `testdata` sounds ok.
+  skip-dirs-use-default: false
 
 # This file contains only configs which differ from defaults.
 # All possible options can be found here https://github.com/golangci/golangci-lint/blob/master/.golangci.reference.yml
