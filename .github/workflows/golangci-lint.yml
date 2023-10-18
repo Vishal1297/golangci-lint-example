@@ -8,7 +8,7 @@ on:
       - "feature/**"
       - "bug/**"
       - "releases/**"
-      - "Vishal1297/**"
+      - "Vishal1297**"
   pull_request:
 
 permissions:
