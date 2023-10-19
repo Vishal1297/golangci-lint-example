@@ -1,16 +1,16 @@
 package main
 
 import (
-	"fmt"
+	"log"
+
 	"golangci-lint-example/examples"
 )
 
-// Test code
-func main()  {
+func main() {
 	examples.Foo()
 	err := examples.Bar(0)
 	if err != nil {
-		fmt.Printf("Error: %v\n",err)
+		log.Printf("Error: %v", err)
 	}
 
 	examples.Start()

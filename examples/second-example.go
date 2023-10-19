@@ -1,16 +1,16 @@
 package examples
 
 import (
-	"fmt"
+	"log"
 	"sync"
 	"time"
 )
 
 // This is the function we'll run in every goroutine.
 func worker(id int) {
-	fmt.Printf("Worker %d starting\n", id)
+	log.Printf("Worker %d starting", id)
 	time.Sleep(time.Second)
-	fmt.Printf("Worker %d done\n", id)
+	log.Printf("Worker %d done", id)
 }
 
 func Start() {
