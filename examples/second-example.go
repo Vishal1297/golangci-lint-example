@@ -7,12 +7,11 @@ import (
 )
 
 // This is the function we'll run in every goroutine.
-func worker(id int) {
+func run_worker(id int) error {
 	fmt.Printf("Worker %d starting\n", id)
-
-	// Sleep to simulate an expensive task.
 	time.Sleep(time.Second)
 	fmt.Printf("Worker %d done\n", id)
+	return nil
 }
 
 func start() {
@@ -22,7 +21,7 @@ func start() {
 		i := i
 		go func() {
 			defer wg.Done()
-			worker(i)
+			run_worker(i)
 		}()
 	}
 
