@@ -3,16 +3,16 @@ package examples
 import "fmt"
 
 var (
-	ERR_INVALID_INPUT = fmt.Errorf("INVALID INPUT")
+	ErrInvalidInput = fmt.Errorf("INVALID INPUT")
 )
 
-func foo() string {
+func Foo() string {
 	return "foo"
 }
 
-func bar(num int) error {
+func Bar(num int) error {
 	if num == 0 {
-		return ERR_INVALID_INPUT
+		return ErrInvalidInput
 	}
 	return nil
 }
