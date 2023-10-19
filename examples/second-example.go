@@ -1,21 +1,19 @@
 package examples
 
 import (
-	"fmt"
+	"log"
 	"sync"
 	"time"
 )
 
 // This is the function we'll run in every goroutine.
 func worker(id int) {
-	fmt.Printf("Worker %d starting\n", id)
-
-	// Sleep to simulate an expensive task.
+	log.Printf("Worker %d starting", id)
 	time.Sleep(time.Second)
-	fmt.Printf("Worker %d done\n", id)
+	log.Printf("Worker %d done", id)
 }
 
-func start() {
+func Start() {
 	var wg sync.WaitGroup
 	for i := 1; i <= 5; i++ {
 		wg.Add(1)

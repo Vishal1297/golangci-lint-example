@@ -1,0 +1,22 @@
+name: reviewdog
+on: [pull_request]
+
+permissions:
+  contents: read
+  # Optional: allow read access to pull request. Use with `only-new-issues` option.
+  pull-requests: read
+
+jobs:
+  golangci-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Run golangci-lint with reviewdog
+        uses: reviewdog/action-golangci-lint@v2.5.0
+        with:
+          go_version: "1.21.1"
+          github_token: ${{ github.token }}
+          cache: false
