@@ -1,6 +1,8 @@
 package examples
 
-import "fmt"
+import (
+	"fmt"
+)
 
 var (
 	ErrInvalidInput = fmt.Errorf("INVALID INPUT")
