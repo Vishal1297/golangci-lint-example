@@ -13,6 +13,8 @@ func worker(id int) {
 	log.Printf("Worker %d done", id)
 }
 
+// Make some changes to produce errors for linter.
+// Start starts the worker.
 func Start() {
 	var wg sync.WaitGroup
 	for i := 1; i <= 5; i++ {
